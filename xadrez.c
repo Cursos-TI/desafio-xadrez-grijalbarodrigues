@@ -12,6 +12,7 @@ int main (){
     printf("1. para Torre\n");
     printf("2. para Bispo\n");
     printf("3. para Rainha\n");
+    printf("4. para Cavalo\n");
     scanf("%d", &opcao);
     
     switch (opcao)
@@ -37,7 +38,7 @@ int main (){
         }
         printf("A torre se moveu %d casas para %s.\n", i -1, direcaoTorre);
         break;
-
+    
     case 2://movimento do BISPO COM while
         char direcaoBispoX[11], direcaoBispoY[11];
         int casasBispo;
@@ -148,11 +149,172 @@ int main (){
                     printf("%d casa para %s e para %s\n", i, direcaoRainhaY, direcaoRainhaX);
                     i++;
                 } printf("A RAINHA se moveu %d casas para %s e para %s\n", i-1, direcaoRainhaY, direcaoRainhaX);
-                
-                break;
-                    
-            }
-    }
+            }    
+    case 4: //cavalo
 
+        int cavaloX, cavaloY, cavaloCompleto;
+        int opcaoCavalo;
+
+        printf("O cavalo se movimenta em L.\n");
+        printf("Para isso você precisa escolher 2 movimentos\n");
+        printf("Qual será o primeiro movimento do cavalo?\n");
+        printf("1. HORIZONTAL DIREITA\n");
+        printf("2. HORIZONTAL ESQUERDA\n");
+        printf("3. VERTICAL PARA CIMA\n");
+        printf("4. VERTICAL PARA BAIXO\n");
+        scanf("%d", &opcaoCavalo);
+
+        switch (opcaoCavalo)
+        {
+        case 1://primeiro movimento cavalo - HORIZONTAL DIREITA
+            
+            int opcaoCavaloHD;
+
+            printf("Você escolheu o 1º movimento do cavalo para HORIZONTAL DIREITA\n");
+            printf("Na horizontal direita você quer mover para CIMA ou para BAIXO?\n");
+            printf("1. HORIZONTAL DIREITA PARA CIMA\n");
+            printf("2. HORIZONTAL DIREITA PARA BAIXO\n");
+            scanf("%d", &opcaoCavaloHD);
+            
+                switch (opcaoCavaloHD)
+                {
+                case 1://HORIZONTAL DIREITA PARA CIMA
+                    
+                    int i;
+                    
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Direita\n");
+                        }
+                        
+                    }printf("Cima\n");
+                    printf("\n");
+                    
+                    break;
+                case 2://HORIZONTAL DIREIA PARA BAIXO
+                                        
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Direita\n");
+                        }
+                        
+                    }printf("Baixo\n");
+                    printf("\n");
+                                        
+                    break;
+                }break;    
+            
+        case 2://segundo movimento cavalo - horizontal ESQUERDA
+            
+            int opcaoCavaloHE;
+            printf("Você escolheu o 1º movimento do cavalo para HORIZONTAL ESQUERDA\n");
+            printf("Na horizontal esquerda você quer mover para CIMA ou para BAIXO?\n");
+            printf("1. HORIZONTAL ESQUERDA PARA CIMA\n");
+            printf("2. HORIZONTAL ESQUERDA PARA BAIXO\n");
+            scanf("%d", &opcaoCavaloHE);
+            
+                switch (opcaoCavaloHE)
+                {
+                case 1://HORIZONTAL ESQUERDA PARA CIMA
+                    
+                    int i;
+                    
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Esqueda\n");
+                        }
+                        
+                    }printf("Cima\n");
+                    printf("\n");
+                    
+                    break;
+                case 2://HORIZONTAL ESQUERDA PARA BAIXO
+                                        
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Esquerda\n");
+                        }
+                        
+                    }printf("Baixo\n");
+                    printf("\n");
+                                        
+                    break;
+                }break;
+        case 3://primeiro movimento cavalo - VERTICAL CIMA DIREITA
+            
+            int opcaoCavaloVcima;
+
+            printf("Você escolheu o 1º movimento do cavalo na VERTICAL PARA CIMA\n");
+            printf("Na vertical para cima você quer mover para DIREITA ou para ESQUERDA?\n");
+            printf("1. VERTICAL PARA CIMA E DIREITA\n");
+            printf("2. VERTICAL PARA CIMA E ESQUERDA\n");
+            scanf("%d", &opcaoCavaloVcima);
+            
+                switch (opcaoCavaloVcima)
+                {
+                case 1://VERTICAL DIREITA PARA CIMA
+                    
+                    int i;
+                    
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Cima\n");
+                        }
+                        
+                    }printf("Direita\n");
+                    printf("\n");
+                    
+                    break;
+                case 2://VERTICAL DIREIA PARA BAIXO
+                                        
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Cima\n");
+                        }
+                        
+                    }printf("Esquerda\n");
+                    printf("\n");
+                                        
+                    break;
+                }break;    
+        case 4://primeiro movimento cavalo - VERTICAL para baixo
+            
+            int opcaoCavaloVbaixo;
+
+            printf("Você escolheu o 1º movimento do cavalo para VERTICAL PARA BAIXO\n");
+            printf("Na vertical para baixo você quer mover para DIREITA ou para ESQUERDA?\n");
+            printf("1. VERTICAL PARA BAIXO E DIREITA\n");
+            printf("2. VERTICAL PARA BAIXO E ESQUERDA\n");
+            scanf("%d", &opcaoCavaloVbaixo);
+            
+                switch (opcaoCavaloVbaixo)
+                {
+                case 1://VERTICAL DIREITA PARA BAIXO
+                    
+                    int i;
+                    
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Baixo\n");
+                        }
+                        
+                    }printf("Direita\n");
+                    printf("\n");
+                    
+                    break;
+                case 2://VERTICAL ESQUERDA PARA BAIXO
+                                        
+                    for(i = 1; i==1; i++){
+                        for(int j =1; j<=2; j++){
+                            printf("Baixo\n");
+                        }
+                        
+                    }printf("Esquerda\n");
+                    printf("\n");
+                                        
+                    break;
+                }break;
+        
+        }
     return 0;
-}
+}}
