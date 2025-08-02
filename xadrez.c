@@ -1,6 +1,51 @@
 #include <stdio.h>
 #include <string.h>
 
+void MovTorre (int numTorre, const char direcaoTorre[])
+{
+    if(numTorre > 0){
+        printf("%s\n", direcaoTorre);
+        MovTorre(numTorre - 1, direcaoTorre);
+    }
+}
+
+void MovBispo(int passo, int totalPassos, char direcaoBispoX[], char direcaoBispoY[]) {
+    if (passo < totalPassos) {
+        for (int i = 0; i < 1; i++) { // loop externo (vertical)
+            for (int j = 0; j < 1; j++) { // loop interno (horizontal)
+                printf("%s e %s\n", direcaoBispoY, direcaoBispoX);
+            }
+        }
+        MovBispo(passo + 1, totalPassos, direcaoBispoX, direcaoBispoY);
+    }
+}
+
+void MovRainhaH (int numRainha, char direcaoRainhaX[]){
+    
+    if(numRainha >0){
+        printf("%s\n", direcaoRainhaX);
+
+        MovRainhaH (numRainha -1, direcaoRainhaX);
+    }
+}
+
+void MovRainhaV (int numRainha, char direcaoRainhaY[]){
+    
+    if(numRainha >0){
+        printf("%s\n", direcaoRainhaY);
+
+        MovRainhaV (numRainha -1, direcaoRainhaY);
+    }
+}
+
+void MovRainhaD (int numRainha, char direcaoRainhaX[], char direcaoRainhaY[]){
+    if (numRainha >0){
+        printf("%s e %s\n", direcaoRainhaY, direcaoRainhaX);
+        MovRainhaD(numRainha -1, direcaoRainhaX, direcaoRainhaY);
+        
+    }
+}
+
 int main (){
 
     int opcao;
@@ -20,8 +65,7 @@ int main (){
     case 1://movimento da torre com for
         char direcaoTorre[11];
         int casasTorre;
-        
-        
+              
         printf("Você escolheu a TORRE\n");
         printf("Para qual direção você quer movimentar a TORRE?\n");
 
@@ -32,12 +76,15 @@ int main (){
         printf("Quantas casas você quer movimentar a TORRE?\n");
         scanf("%d", &casasTorre);
 
+        MovTorre(casasTorre, direcaoTorre);
+                
+        break;
 
-        for( i =1; i <= casasTorre; i++){
+        /*for( i =1; i <= casasTorre; i++){
         printf("%d casa para %s\n", i, direcaoTorre);
         }
         printf("A torre se moveu %d casas para %s.\n", i -1, direcaoTorre);
-        break;
+        break;*/
     
     case 2://movimento do BISPO COM while
         char direcaoBispoX[11], direcaoBispoY[11];
@@ -64,12 +111,14 @@ int main (){
         printf("Quantas casas você quer movimentar o BISPO?\n");
         scanf("%d", &casasBispo);
 
-        while (i <= casasBispo)
+        MovBispo (0, casasBispo, direcaoBispoX, direcaoBispoY);
+
+        /*while (i <= casasBispo)
         {
             printf("%d casa para %s e para %s\n", i, direcaoBispoY, direcaoBispoX);
             i++;
         } printf("O BISPO se moveu %d casas para %s e para %s\n", i-1, direcaoBispoY, direcaoBispoX);
-        
+        */
         break;
 
     case 3://movimento da rainha com do-while
@@ -97,13 +146,16 @@ int main (){
                 printf("Quantas casas você quer movimentar a Rainha?\n");
                 scanf("%d", &casasRainha);
 
-                do{
+                MovRainhaH(casasRainha, direcaoRainhaX);
+
+                /*do{
                     printf("%d casa para %s\n", i, direcaoRainhaX);
                     i++;
                 }
                 while (i <= casasRainha);{
                     printf("A Rainha se moveu %d casas para %s\n", i-1, direcaoRainhaX);
-                }break;
+                }*/
+                    break;
 
             case 2://rainha na vertical
                 printf("Você quer movimentar a Rainha para CIMA ou para BAIXO?\n");
@@ -115,16 +167,19 @@ int main (){
                 printf("Quantas casas você quer movimentar a Rainha?\n");
                 scanf("%d", &casasRainha);
 
-                do{
+                MovRainhaV(casasRainha, direcaoRainhaY);
+
+                /*do{
                     printf("%d casa para %s\n", i, direcaoRainhaY);
                     i++;
                 }
                 while (i <= casasRainha);{
                     printf("A Rainha se moveu %d casas para %s\n", i-1, direcaoRainhaY);
-                }break;
+                }*/
+                    break;
 
             case 3://rainha na diagonal
-                char direcaoBispoX[11], direcaoBispoY[11];
+                char direcaoRainhaX[11], direcaoRainhaY[11];
                 int casasBispo;
                 
                 printf("PRIMEIRO MOVIMENTO DA RAINHA\n");
@@ -144,12 +199,14 @@ int main (){
                 printf("Quantas casas você quer movimentar a RAINHA?\n");
                 scanf("%d", &casasRainha);
 
-                while (i <= casasRainha)
+                MovRainhaD (casasRainha, direcaoRainhaX, direcaoRainhaY);
+
+                /*while (i <= casasRainha)
                 {
                     printf("%d casa para %s e para %s\n", i, direcaoRainhaY, direcaoRainhaX);
                     i++;
-                } printf("A RAINHA se moveu %d casas para %s e para %s\n", i-1, direcaoRainhaY, direcaoRainhaX);
-            }    
+                } printf("A RAINHA se moveu %d casas para %s e para %s\n", i-1, direcaoRainhaY, direcaoRainhaX);*/
+            } break;   
     case 4: //cavalo
 
         int cavaloX, cavaloY, cavaloCompleto;
