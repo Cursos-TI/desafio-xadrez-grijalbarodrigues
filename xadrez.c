@@ -180,7 +180,7 @@ int main (){
 
             case 3://rainha na diagonal
                 char direcaoRainhaX[11], direcaoRainhaY[11];
-                int casasBispo;
+                int casasRainha;
                 
                 printf("PRIMEIRO MOVIMENTO DA RAINHA\n");
                 printf("Você quer movimentar a RAINHA para CIMA ou para BAIXO?\n");
