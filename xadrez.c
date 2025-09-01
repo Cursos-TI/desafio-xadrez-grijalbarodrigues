@@ -125,7 +125,7 @@ int main (){
         char direcaoRainhaX[11], direcaoRainhaY[11];
         int casasRainha, direcaoRainha;    
         
-        printf("Você escolheu o RAINHA\n");
+        printf("Você escolheu a RAINHA\n");
         printf("A Rainha se move em todos os sentidos: horizontal, vertical e diagonal\n");
         printf("Qual sentido você quer movimentar a Rainha?\n");
         printf("1. Horizontal\n");
@@ -135,7 +135,7 @@ int main (){
 
             switch (direcaoRainha)
             {
-            case 1://rainha na horizonta
+            case 1://rainha na horizontal
                 
                 printf("Você quer movimentar a Rainha para DIREITA ou ESQUERDA?\n");
 
@@ -373,5 +373,9 @@ int main (){
                 }break;
         
         }
+
     return 0;
-}}
+default:
+    printf("Digite uma opção válida!\n");
+break;}
+}
